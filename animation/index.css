@@ -1,0 +1,23 @@
+body {
+    background: #97b8c4;
+}
+
+#root {
+    /* background: #a567b8; */
+    width: 400px;
+    height: 400px;
+    position: relative;
+    animation: linear 1s infinite;
+    animation-name: tesanimation;
+    /* background: linear-gradient(90deg, #090979 0%, #001424 0%, #02689b 91%); */
+    background: linear-gradient(to right,#f6f7f8c0 0%,#f6f7f8c0 20%,#f6f7f879 40%,#f6f7f8c0 100%);
+    background-size: 800px 200px;
+}
+
+@keyframes tesanimation{
+    0% { background-position: -400px 0px; }
+    25% { background-position: -200px 0px; }
+    50% { background-position: 0px 0px; }
+    75% { background-position: 200px 0px; }
+    100% { background-position: 400px 0px; }
+}

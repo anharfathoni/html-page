@@ -1,0 +1,499 @@
+<!-- Design By: https://dribbble.com/shots/7332207-Web-Platform-R-E-Senior -->
+<!-- Coded By: anharaf -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Real Estate</title>
+    <script
+      src="https://kit.fontawesome.com/02199a3a80.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        margin: 0px;
+        padding: 20px;
+        background-color: #383857;
+      }
+      .normal {
+        margin: 0px;
+        padding: 0px;
+      }
+      #container {
+        width: 100%;
+        height: 95vh;
+        display: flex;
+        border-radius: 25px;
+        overflow: hidden;
+        /* border: 1px solid #f2a444; */
+      }
+      #left {
+        width: 10%;
+        height: 95vh;
+        background-color: #480925;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+      #middle {
+        width: 60%;
+        height: 95vh;
+        background-color: #f4f6f8;
+        padding: 3em;
+        padding-bottom: 0em;
+        overflow: auto;
+      }
+      .title {
+        margin-bottom: 1em;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      #right {
+        height: 95vh;
+        width: 30%;
+        background-color: #ffffff;
+        overflow: auto;
+      }
+      .content-left {
+        height: 100%;
+        padding: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .sidebar-title {
+        text-align: center;
+      }
+      .sidebar-menu {
+        height: 2em;
+        color: #ffffff;
+        background-color: #713e57;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-bottom-left-radius: 25% 100%;
+        border-bottom-right-radius: 25% 100%;
+        border-top-left-radius: 25% 100%;
+        border-top-right-radius: 25% 100%;
+        margin-top: 2em;
+      }
+      .span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .span-active {
+        width: 100%;
+        background-color: #f8f0f0;
+        height: 1px;
+        margin-top: 3px;
+      }
+      .active {
+        width: 100%;
+        background-color: #f8f0f0;
+        color: #000000;
+        height: 2em;
+        border-bottom-left-radius: 25% 100%;
+        border-bottom-right-radius: 25% 100%;
+        border-top-left-radius: 25% 100%;
+        border-top-right-radius: 25% 100%;
+        border-left: 2px solid #ffffff;
+      }
+      .middle-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #search {
+        height: 2em;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        color: #a5a3ae;
+        border-radius: 25px;
+        overflow: hidden;
+      }
+      .search-btn {
+        width: 20%;
+        height: 100%;
+        background-color: #405aec;
+        color: #000000;
+        padding: 2px;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container-add-apartment {
+        background-color: #405aec;
+        color: #ffffff;
+        height: 2em;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20%;
+        cursor: pointer;
+      }
+      .btn-add-apartment {
+        background-color: #ffffff;
+        color: #000000;
+        height: 1.5em;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+
+      .icon {
+        margin-right: 10px;
+      }
+      img {
+        border-radius: 50%;
+      }
+      .feature {
+        margin-top: 3em;
+        margin-bottom: 5em;
+      }
+      .feature-top-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .container-period {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .period {
+        margin: 1em;
+        cursor: pointer;
+        color: #a5a3ae;
+      }
+      .period-active {
+        color: #383857;
+        font-weight: 600;
+      }
+      #card-info {
+        display: flex;
+        justify-content: space-between;
+      }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 30%;
+        height: 8em;
+        border-radius: 25px;
+      }
+      .card1 {
+        background-color: #ed6d46;
+        color: #ffffff;
+      }
+      .card2 {
+        background-color: #43b2dd;
+        color: #ffffff;
+      }
+      .card3 {
+        background-color: #e2c566;
+        color: #ffffff;
+      }
+      .card-small {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        width: 30%;
+        height: 3em;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card-small1 {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .card-small2 {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .card-small3 {
+        background-color: #ffffff;
+        color: #000000;
+      }
+      .card-title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1em;
+      }
+      .middle-bottom {
+        padding-bottom: 3em;
+      }
+      /* #feature-listing{
+        margin-bottom: 3em;
+      } */
+
+      #inAction {
+        margin-top: 5em;
+        margin-bottom: 5em;
+      }
+      .cardInAction {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 50%;
+        padding: 1em;
+        border-radius: 25px;
+      }
+      .description {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+        padding-left: 6em;
+      }
+      .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 2px;
+      }
+      .dot1 {
+        background-color: #ed6d46;
+      }
+      .dot2 {
+        background-color: #43b2dd;
+      }
+      .dot3 {
+        background-color: #e2c566;
+      }
+      .description-content {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="left">
+        <div class="content-left">
+          <img
+            src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/852/2321826852_5db0a191-63b3-401b-9e67-462c08cba34d.png?cb=1571022442"
+            alt="Avatar"
+            style="width:45px; height: 45px;"
+          />
+          <div>
+            <span class="span">
+              <i class="fas fa-home sidebar-menu active"></i>
+              <div class="span-active"></div>
+            </span>
+            <p class="sidebar-menu">
+              <i class="fas fa-tag"></i>
+            </p>
+            <p class="sidebar-menu">
+              <i class="far fa-heart"></i>
+            </p>
+            <p class="sidebar-menu">
+              <i class="far fa-calendar"></i>
+            </p>
+            <p class="sidebar-menu">
+              <i class="fas fa-shopping-bag"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="middle">
+        <div class="middle-top">
+          <div id="search">
+            <input
+              type="text"
+              placeholder="Search"
+              style="width: 80%; border: none; background-color: #ffffff; margin-left: 1em;"
+            />
+            <span class="search-btn">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+          <div class="container-add-apartment">
+            <button class="btn-add-apartment">
+              <i class="fas fa-plus"></i>
+            </button>
+            Add Apartments
+          </div>
+        </div>
+        <br /><br />
+        <h1>Real Estate</h1>
+        <img
+          src="https://image.shutterstock.com/image-vector/vector-design-eps10-building-city-260nw-174577049.jpg"
+          alt="Avatar"
+          style="border-radius: 0; width: 100%;"
+        />
+
+        <br />
+
+        <div class="feature">
+          <div id="card-info">
+            <div class="card card1">
+              <div class="card-title">
+                <div class="card-small card-small1">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <p>Online</p>
+                  <p>description ...</p>
+                </div>
+              </div>
+            </div>
+            <div class="card card2">
+              <div class="card-title">
+                <div class="card-small card-small2">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <div>
+                  <p>Discover</p>
+                  <p>description ...</p>
+                </div>
+              </div>
+            </div>
+            <div class="card card3">
+              <div class="card-title">
+                <div class="card-small card-small3">E</div>
+                <div>
+                  <p>Secure</p>
+                  <p>description ...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle-bottom">
+          <div id="feature-listing">
+            <h1>Featured Listing</h1>
+            <ol>
+              <li class="card card1">
+                <p>cozy place</p>
+              </li>
+              <li>
+                <p>palm spring</p>
+              </li>
+              <li>
+                <p>Napa</p>
+              </li>
+            </ol>
+          </div>
+
+          <div id="total-earning">
+            <div id="graph"></div>
+            <div id=""></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="right">
+        <div style="padding: 4em;">
+          <div style="display: flex; justify-content: center;">
+            <div
+              style="background-color: #f6f6f6; border-radius: 25px; height: 2em; width: 70%; display: flex; align-items: center; justify-content: center;"
+            >
+              <i
+                class="fas fa-search icon"
+                style="display: flex; align-items: center; width:25px; height: 25px; margin-right: 10px;"
+              ></i>
+              <input
+                style="border: none; background-color: #f6f6f6"
+                placeholder="Search Your Instagram"
+              />
+            </div>
+          </div>
+
+          <div
+            style="display: flex; flex-direction: column; align-items: center; margin-top: 4em;"
+          >
+          <!-- src="https://instagram.fcgk1-1.fna.fbcdn.net/vp/29034766dc0bfec181124a1ebef20ab3/5E4659F3/t51.2885-15/sh0.08/e35/s640x640/69640363_2373155469568895_7306164089996380512_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=111 640w,https://instagram.fcgk1-1.fna.fbcdn.net/vp/3645b3efdf21d400b122aa51f7d4d3ff/5E2B6937/t51.2885-15/sh0.08/e35/s750x750/69640363_2373155469568895_7306164089996380512_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=111 750w,https://instagram.fcgk1-1.fna.fbcdn.net/vp/de77a962bc5859a1aea972adfec8dadd/5E559237/t51.2885-15/e35/s1080x1080/69640363_2373155469568895_7306164089996380512_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=111 1080w" -->
+            <img
+              src="https://instagram.fcgk1-1.fna.fbcdn.net/vp/f7715aee5177a1297e5ddd5463ae739c/5E4BE060/t51.2885-15/sh0.08/e35/s640x640/60240055_509127302956974_6335885217272219123_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=106 640w,https://instagram.fcgk1-1.fna.fbcdn.net/vp/a4c302c21c8f782a3bb714f2e2236a5f/5E40F960/t51.2885-15/sh0.08/e35/s750x750/60240055_509127302956974_6335885217272219123_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=106 750w,https://instagram.fcgk1-1.fna.fbcdn.net/vp/7b160b5d9e558dc6ab38c00bdbca415f/5E4D67D7/t51.2885-15/e35/s1080x1080/60240055_509127302956974_6335885217272219123_n.jpg?_nc_ht=instagram.fcgk1-1.fna.fbcdn.net&_nc_cat=106 1080w"
+              alt="Avatar"
+              style="width:100px; height: 100px;"
+            />
+            <h2 class="normal" style="margin-top: 20px;">Michelle Chen</h2>
+            <p class="normal day">Jakarta, Indonesia</p>
+
+            <div
+              style="margin-top: 3em; padding-left: 1em; padding-right: 1em; width: 60%;"
+            >
+              <div style="display: flex; justify-content: space-between;">
+                <span class="total">
+                  <p class="day">Followers</p>
+                  <p class="period-active normal" style="font-size: 30px;">
+                    120k
+                  </p>
+                </span>
+                <span>
+                  <p class="day">Post</p>
+                  <p class="period-active normal" style="font-size: 30px;">
+                    280
+                  </p>
+                </span>
+                <span>
+                  <p class="day">Like</p>
+                  <p class="period-active normal" style="font-size: 30px;">
+                    80k
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background-color: #20233d; color: #ffffff; padding: 2em; height: inherit">
+          <div
+            style="display: flex; align-items: center; justify-content: space-between;"
+          >
+            <h3>Notifications</h3>
+            <p style="color:#f2a444; cursor: pointer;">See All</p>
+          </div>
+          <div style="display: flex; align-items: center; margin-top: 30px;">
+            <img
+              src="http://web4.hobbylinc.com/gr/ban/ban207855.jpg"
+              alt="Avatar"
+              style="width:40px; height: 40px;"
+            />
+            <div
+              style="display: flex; flex-direction: column; margin-left: 10px;"
+            >
+              <h4 class="normal" style="margin-top: 20px;">Anhar AF</h4>
+              <p class="normal day">Liked your last post</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; margin-top: 30px;">
+            <img
+              src="http://web4.hobbylinc.com/gr/ban/ban207855.jpg"
+              alt="Avatar"
+              style="width:40px; height: 40px;"
+            />
+            <div
+              style="display: flex; flex-direction: column; margin-left: 10px;"
+            >
+              <h4 class="normal" style="margin-top: 20px;">Anhar AF</h4>
+              <p class="normal day">Liked your last post</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; margin-top: 30px;">
+            <img
+              src="http://web4.hobbylinc.com/gr/ban/ban207855.jpg"
+              alt="Avatar"
+              style="width:40px; height: 40px;"
+            />
+            <div
+              style="display: flex; flex-direction: column; margin-left: 10px;"
+            >
+              <h4 class="normal" style="margin-top: 20px;">Anhar AF</h4>
+              <p class="normal day">Liked your last post</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
